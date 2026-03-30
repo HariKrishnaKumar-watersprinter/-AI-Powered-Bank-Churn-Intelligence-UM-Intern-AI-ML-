@@ -28,7 +28,7 @@ def database_content_view():
 
         # Generate Binary Download for the SQLite .db file
         if os.path.exists(model_path):
-            with open(db_path, "rb") as f:
+            with open(model_path, "rb") as f:
                 st.download_button(
                     label="📂 Download Raw Database (.db)",
                     data=f,

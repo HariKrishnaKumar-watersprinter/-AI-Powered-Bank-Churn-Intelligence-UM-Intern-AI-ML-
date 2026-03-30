@@ -7,6 +7,7 @@ from Authentication.config import config_user
 from Authentication.signup import signup_user
 import os
 
+
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.yaml")
 
 def user_auth():

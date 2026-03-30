@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from utils.helpers import risk_segment
 from src.feature_engineering import create_features
 import os
-from prediction.predici_model import load_prediction_model
+from prediction.predict_model import load_prediction_model
 #if not st.session_state.get('authentication_status'):
 #    st.switch_page("app.py")
 

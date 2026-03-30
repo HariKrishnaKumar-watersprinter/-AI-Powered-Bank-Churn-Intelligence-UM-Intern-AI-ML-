@@ -7,14 +7,16 @@ import streamlit as st
 
 if "database" in st.secrets:
     DATABASE_URL = st.secrets["database"]["url"]
+    engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
     st.info("✅ Connected to Supabase PostgreSQL")
 else:
     model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
     engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
 
-with engine.connect() as conn:
-    conn.execute(sa.text("PRAGMA journal_mode=WAL;"))
-    conn.commit()
+if "sqlite" in str(engine.url):
+    with engine.connect() as conn:
+        conn.execute(sa.text("PRAGMA journal_mode=WAL;"))
+        conn.commit()
 Base = declarative_base()
 
 class BankCustomer(Base):
@@ -34,7 +36,11 @@ class BankCustomer(Base):
     
 
 
-Base.metadata.create_all(engine)
+try:
+    Base.metadata.create_all(bind=engine)
+    st.success("✅ Table checked/created successfully")
+except Exception as e:
+    st.error(f"❌ Table creation failed: {e}")
 SessionLocal = sessionmaker(bind=engine)
 
 def save_data(CustomerId,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary):

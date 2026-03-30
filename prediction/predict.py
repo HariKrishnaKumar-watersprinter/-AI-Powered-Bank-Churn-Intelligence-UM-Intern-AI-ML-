@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import plotly.express as px
-import plotly.graph_objects as go
 from utils.helpers import risk_segment
-from src.feature_engineering import create_features
 from prediction.predict_model import predict_churn
 from utils.recommendation import retention_action
 from utils.retention_engine import personalized_strategy

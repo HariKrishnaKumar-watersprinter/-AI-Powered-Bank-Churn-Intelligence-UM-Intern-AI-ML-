@@ -5,9 +5,12 @@ from sqlalchemy.orm import declarative_base
 import os
 import streamlit as st
 
-
-model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
-engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
+if "database" in st.secrets:
+    DATABASE_URL = st.secrets["database"]["url"]
+    st.info("✅ Connected to Supabase PostgreSQL")
+else:
+    model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
+    engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
 
 with engine.connect() as conn:
     conn.execute(sa.text("PRAGMA journal_mode=WAL;"))

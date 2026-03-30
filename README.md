@@ -1,1 +1,1 @@
-# -AI-Powered-Bank-Churn-Intelligence-UM-Intern-AI-ML-
+# AI-Powered-Bank-Churn-Intelligence

@@ -28,3 +28,4 @@ def model_explainability():
     fig2 = plt.gcf()
     st.pyplot(fig2)
     plt.clf()
+model_explainability()

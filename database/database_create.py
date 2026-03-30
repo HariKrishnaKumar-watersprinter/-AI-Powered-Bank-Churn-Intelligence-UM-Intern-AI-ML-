@@ -4,9 +4,9 @@ from sqlalchemy import Column, Integer, String, and_,or_,update,delete
 from sqlalchemy.orm import declarative_base
 import os
 import streamlit as st
-
+from .streamlit import secrets.toml
 if "database" in st.secrets:
-    DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
+    DATABASE_URL = st.secrets["secrets.toml"]["url"]
     engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
     st.info("✅ Connected to Supabase PostgreSQL")
 else:

@@ -10,6 +10,7 @@ def database_content_view():
         st.info("The database is currently empty. Predicted results will be saved here automatically.")
     else:
         # Fetch data using the existing SQLAlchemy engine
+        st.write('💾 Database Content')
         data = pd.read_sql_query("select * from bank_customers", engine)
         
         # Display the data table

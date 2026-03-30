@@ -23,6 +23,7 @@ from imblearn.pipeline import Pipeline
 from imblearn.over_sampling import RandomOverSampler, SMOTE, ADASYN
 from imblearn.under_sampling import RandomUnderSampler, TomekLinks, AllKNN
 from imblearn.combine import SMOTEENN, SMOTETomek
+import os
 st.cache_data()
 def model_training():
     x_train,x_test,y_train,y_test = preprocess_data()
@@ -122,8 +123,10 @@ def model_training():
             if auc > best_score:
                 best_score = auc
         
-            joblib.dump(model,"https://github.com/HariKrishnaKumar-watersprinter/-AI-Powered-Bank-Churn-Intelligence-UM-Intern-AI-ML-/main/model/{model_name}_{sampler_name}.pkl") 
-
+           os.makedirs("models", exist_ok=True) 
+           filename = f"models/{model_name}_{sampler_name}.pkl"
+           joblib.dump(model, filename)
+           print(f"✅ Model saved locally: {filename}")
 # -------------------------------------------------
 # RESULTS
 # -------------------------------------------------

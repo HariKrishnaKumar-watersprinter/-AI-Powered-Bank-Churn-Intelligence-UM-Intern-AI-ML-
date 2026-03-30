@@ -12,6 +12,5 @@ mlflow
 streamlit-authenticator
 imbalanced-learn
 reportlab
-psycopg
 pathlib
 psycopg2

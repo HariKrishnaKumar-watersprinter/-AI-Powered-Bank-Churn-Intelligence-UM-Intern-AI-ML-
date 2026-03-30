@@ -5,16 +5,9 @@ from sqlalchemy.orm import declarative_base
 import os
 
 # Create a relative path to the database file
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "database")
-db_path = os.path.join(DATA_DIR, 'bank_data.db')
+
 model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
 engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
-try:
-    with open(db_path, 'a'):
-        os.utime(db_path, None)
-except:
-    pass
 
 with engine.connect() as conn:
     conn.execute(sa.text("PRAGMA journal_mode=WAL;"))

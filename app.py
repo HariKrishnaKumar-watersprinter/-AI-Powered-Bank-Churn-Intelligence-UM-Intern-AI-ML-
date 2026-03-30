@@ -116,4 +116,4 @@ if __name__ == "__main__":
         
         # Initialize and run Navigation
     pg = st.navigation(pages)
-    
+    pg.run()

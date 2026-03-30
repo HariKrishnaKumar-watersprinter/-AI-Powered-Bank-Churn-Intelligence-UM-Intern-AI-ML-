@@ -12,3 +12,4 @@ mlflow
 streamlit-authenticator
 imblearn
 reportlab
+psycopg

@@ -13,4 +13,4 @@ streamlit-authenticator
 imbalanced-learn
 reportlab
 pathlib
-psycopg-c
+psycopg[binary]

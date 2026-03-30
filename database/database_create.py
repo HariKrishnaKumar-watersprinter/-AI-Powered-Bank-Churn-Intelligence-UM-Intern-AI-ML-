@@ -7,7 +7,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy import create_engine
-
+import psycopg2 
 load_dotenv()
 
 DATABASE_URL = st.secrets["url"]

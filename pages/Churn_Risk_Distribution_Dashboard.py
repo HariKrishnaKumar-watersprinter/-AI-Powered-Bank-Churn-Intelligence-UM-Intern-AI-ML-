@@ -24,7 +24,7 @@ df1 = pd.get_dummies(df1, columns=['Geography', 'Gender'],dtype=int)
 
 x=df1.drop('Exited',axis=1)
 y=df1['Exited']
-probs = pipeline.predict_proba(x)[:,1]
+probs = pipeline.predict_proba(x)[0][1]
 
 df1["ChurnProbability"] = probs
 df1["RiskSegment"] = df1["ChurnProbability"].apply(risk_segment)

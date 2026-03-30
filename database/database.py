@@ -3,14 +3,11 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String, and_,or_,update,delete
 from sqlalchemy.orm import declarative_base
 import os
+import streamlit as st
 
-url = "postgresql+psycopg://postgres.bank_data.db:@Hari2222-0-....pooler.supabase.com:5432/postgres"
-# Create a relative path to the database file
-if "database" in st.secrets:
-    DATABASE_URL = st.secrets["database"]["url"]
-else:
-    model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
-    engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
+
+model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
+engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
 
 with engine.connect() as conn:
     conn.execute(sa.text("PRAGMA journal_mode=WAL;"))

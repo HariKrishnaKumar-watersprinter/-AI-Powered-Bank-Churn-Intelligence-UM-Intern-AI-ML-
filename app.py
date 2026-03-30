@@ -6,12 +6,7 @@ from src.data_loader import load_data
 from utils.helpers import risk_segment
 from utils.recommendation import retention_action
 from src.data_quality import data_quality_report, detect_outliers
-from src.eda import numerical_stats
 from src.feature_engineering import create_features
-from dashboard import univariate
-from dashboard import bivariate
-from dashboard import multivariate
-from dashboard import numerical
 from utils.retention_engine import personalized_strategy
 from prediction import predict
 from database import database_content

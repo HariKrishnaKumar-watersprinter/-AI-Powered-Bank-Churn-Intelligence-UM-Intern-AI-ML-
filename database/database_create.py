@@ -37,6 +37,7 @@ class BankCustomer(Base):
     HasCrCard = sa.Column(sa.Integer, nullable=False)
     IsActiveMember = sa.Column(sa.Integer, nullable=False)
     EstimatedSalary = sa.Column(sa.Float, nullable=False)
+    Exited=sa.column(sa.int,nullable=False)
     
 
 
@@ -44,7 +45,7 @@ Base.metadata.create_all(bind=engine)
 st.success("✅ Table checked/created successfully")
 SessionLocal = sessionmaker(bind=engine)
 
-def save_data(CustomerId,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary):
+def save_data(CustomerId,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited):
     session = SessionLocal()
     try:
         # Check if the customer already exists to prevent UNIQUE constraint error
@@ -62,13 +63,14 @@ def save_data(CustomerId,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfPr
             customer.HasCrCard = HasCrCard
             customer.IsActiveMember = IsActiveMember
             customer.EstimatedSalary = EstimatedSalary
+            customer.Exited = Exited
         else:
             # Insert new record
             new_customer = BankCustomer(
                 CustomerId=CustomerId, CreditScore=CreditScore, Geography=Geography, 
                 Gender=Gender, Age=Age, Tenure=Tenure, Balance=Balance, 
                 NumOfProducts=NumOfProducts, HasCrCard=HasCrCard, 
-                IsActiveMember=IsActiveMember, EstimatedSalary=EstimatedSalary
+                IsActiveMember=IsActiveMember, EstimatedSalary=EstimatedSalary ,Exited = Exited
             )
             session.add(new_customer)
         

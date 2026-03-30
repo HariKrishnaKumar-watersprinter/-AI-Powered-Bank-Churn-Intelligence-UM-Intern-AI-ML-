@@ -6,8 +6,9 @@ import os
 
 # Create a relative path to the database file
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(BASE_DIR, 'bank_data.db')
-engine = sa.create_engine(f'sqlite:///{db_path}')
+DATA_DIR = os.path.join(BASE_DIR, "database")
+db_path = os.path.join(DATA_DIR, 'bank_data.db')
+engine = sa.create_engine(f'sqlite:///{db_path}',connect_args={"check_same_thread": False})
 
 Base = declarative_base()
 

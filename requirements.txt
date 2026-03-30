@@ -13,3 +13,5 @@ streamlit-authenticator
 imblearn
 reportlab
 psycopg
+pathlib
+os

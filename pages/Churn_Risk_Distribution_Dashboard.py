@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 from utils.helpers import risk_segment
 from src.feature_engineering import create_features
 import os
+from prediction.predici_model import load_prediction_model
 #if not st.session_state.get('authentication_status'):
 #    st.switch_page("app.py")
 
@@ -24,7 +25,7 @@ df1 = pd.get_dummies(df1, columns=['Geography', 'Gender'],dtype=int)
 
 x=df1.drop('Exited',axis=1)
 y=df1['Exited']
-probs = pipeline.predict_proba(x)[0][1]
+probs,_= load_prediction_model()
 
 df1["ChurnProbability"] = probs
 df1["RiskSegment"] = df1["ChurnProbability"].apply(risk_segment)

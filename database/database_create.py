@@ -4,7 +4,11 @@ from sqlalchemy import Column, Integer, String, and_,or_,update,delete
 from sqlalchemy.orm import declarative_base
 import os
 import streamlit as st
+from dotenv import load_dotenv
+import pandas as pd
+from sqlalchemy import create_engine
 
+load_dotenv()
 if "database" in st.secrets:
     DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
     engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)

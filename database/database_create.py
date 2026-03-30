@@ -10,10 +10,9 @@ from sqlalchemy import create_engine
 
 load_dotenv()
 
-if "database" in st.secrets:
-    DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
-    engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
-    st.info("✅ Connected to Supabase PostgreSQL")
+DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
+engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
+st.info("✅ Connected to Supabase PostgreSQL")
 #else:
    # model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
    # engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})

@@ -123,7 +123,7 @@ def model_training():
             if auc > best_score:
                 best_score = auc
         
-            os.makedirs("model", exist_ok=True) 
+            model_path = os.path.join(os.getcwd(),model)
             filename = f"model/{model_name}_{sampler_name}.pkl"
             joblib.dump(model, filename)
             print(f"✅ Model saved locally: {filename}")

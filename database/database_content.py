@@ -1,5 +1,5 @@
 import streamlit as st
-from database.database import get_all_data, engine, db_path
+from database.database_create import get_all_data, engine, db_path
 import pandas as pd
 import os
 

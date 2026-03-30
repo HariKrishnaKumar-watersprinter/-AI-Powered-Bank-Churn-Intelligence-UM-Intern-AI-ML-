@@ -9,7 +9,7 @@ from prediction.predict_model import predict_churn
 from utils.recommendation import retention_action
 from utils.retention_engine import personalized_strategy
 from utils.recommendation import retention_action
-from database.database import  BankCustomer,save_data
+from database.database_create import  BankCustomer,save_data
 
 
 def prediction():

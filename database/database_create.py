@@ -4,19 +4,19 @@ from sqlalchemy import Column, Integer, String, and_,or_,update,delete
 from sqlalchemy.orm import declarative_base
 import os
 import streamlit as st
-from .streamlit import secrets.toml
+
 if "database" in st.secrets:
-    DATABASE_URL = st.secrets["secrets.toml"]["url"]
+    DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
     engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
     st.info("✅ Connected to Supabase PostgreSQL")
-else:
-    model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
-    engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
+#else:
+   # model_path = os.path.join(os.getcwd(), "database", "bank_data.db")
+   # engine = sa.create_engine(f'sqlite:///{model_path}',connect_args={"check_same_thread": False})
 
-if "sqlite" in str(engine.url):
-    with engine.connect() as conn:
-        conn.execute(sa.text("PRAGMA journal_mode=WAL;"))
-        conn.commit()
+#if "sqlite" in str(engine.url):
+  #  with engine.connect() as conn:
+     #   conn.execute(sa.text("PRAGMA journal_mode=WAL;"))
+     #   conn.commit()
 Base = declarative_base()
 
 class BankCustomer(Base):

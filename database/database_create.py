@@ -9,6 +9,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 load_dotenv()
+
 if "database" in st.secrets:
     DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
     engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
@@ -40,11 +41,8 @@ class BankCustomer(Base):
     
 
 
-try:
-    Base.metadata.create_all(bind=engine)
-    st.success("✅ Table checked/created successfully")
-except Exception as e:
-    st.error(f"❌ Table creation failed: {e}")
+Base.metadata.create_all(bind=engine)
+st.success("✅ Table checked/created successfully")
 SessionLocal = sessionmaker(bind=engine)
 
 def save_data(CustomerId,CreditScore,Geography,Gender,Age,Tenure,Balance,NumOfProducts,HasCrCard,IsActiveMember,EstimatedSalary):

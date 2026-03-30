@@ -73,7 +73,7 @@ def home_page():
     """)
 
 def prediction_page():
-    predict.prediction()
+    predict.prediction_churn()
 
 def database_page():
     database_content.database_content_view()

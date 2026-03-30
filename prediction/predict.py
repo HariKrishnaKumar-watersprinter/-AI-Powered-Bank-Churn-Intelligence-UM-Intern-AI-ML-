@@ -12,7 +12,7 @@ from utils.recommendation import retention_action
 from database.database_create import  BankCustomer,save_data
 
 
-def prediction():
+def prediction_churn():
     st.header("🔮 Customer Churn Prediction")
     st.markdown("### Enter the customer details to predict churn risk")
     col1, col2 = st.columns(2)

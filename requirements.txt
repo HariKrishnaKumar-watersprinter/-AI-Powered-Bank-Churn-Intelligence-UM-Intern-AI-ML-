@@ -10,7 +10,7 @@ shap
 joblib
 mlflow
 streamlit-authenticator
-imblearn
+imbalanced-learn
 reportlab
 psycopg
 pathlib

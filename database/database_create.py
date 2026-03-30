@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 
 load_dotenv()
 
-DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
+DATABASE_URL = st.secrets["url"]
 engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
 st.info("✅ Connected to Supabase PostgreSQL")
 #else:

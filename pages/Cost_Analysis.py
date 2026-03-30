@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 import plotly.express as px
 from src.feature_engineering import create_features
-
+from prediction.predict_model import load_prediction_model
 #if not st.session_state.get('authentication_status'):
 #    st.switch_page("app.py")
 
@@ -18,7 +18,7 @@ def Cost_Analysis():
     df = pd.get_dummies(df, columns=['Geography', 'Gender'],dtype=int)
     x=df.drop('Exited',axis=1)
     y=df['Exited']
-    model = joblib.load("F:/Project/unified mentor/Bank churn Prediction/model/GradientBoosting_AllKNN.pkl")
+    model = load_prediction_model()
     probs = model.predict_proba(x)[:,1]
 
     thresholds = [0.3, 0.4, 0.5, 0.6, 0.7]

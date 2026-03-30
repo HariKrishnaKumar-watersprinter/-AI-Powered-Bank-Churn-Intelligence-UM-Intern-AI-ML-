@@ -104,12 +104,11 @@ pages = {
 
 if __name__ == "__main__":
     # 1. Handle Authentication First
-    #auth_status = main.user_auth()
+    auth_status = main.user_auth()
 
-    #if auth_status:
-        # 2. Only load data and run navigation if authenticated
-    df = get_processed_data()
+    if auth_status:
+        df = get_processed_data()
         
         # Initialize and run Navigation
-    pg = st.navigation(pages)
-    pg.run()
+        pg = st.navigation(pages)
+        pg.run()

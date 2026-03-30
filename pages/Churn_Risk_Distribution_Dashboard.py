@@ -16,7 +16,7 @@ st.title("📊 Churn Risk Distribution Dashboard")
 df=create_features()
 df1=df.copy()
 pipeline = os.path.join(os.getcwd(), "best model", "GradientBoosting_AllKNN.pkl")
-
+pipeline=joblib.load(pipeline)
 df1.drop(['CustomerId', 'Surname','Year'], axis=1, inplace=True)
 
     # One-hot encoding

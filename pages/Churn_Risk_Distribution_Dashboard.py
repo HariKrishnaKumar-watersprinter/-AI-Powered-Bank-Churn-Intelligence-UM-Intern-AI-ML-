@@ -28,9 +28,9 @@ y=df1['Exited']
 probs,_,_= predict_churn(x)
 
 df1["ChurnProbability"] = probs
-df1["RiskSegment"] = df1["ChurnProbability"].apply(risk_segment(probs))
+df1["RiskSegment"] = df1["ChurnProbability"].apply(risk_segment)
 df["ChurnProbability"] = probs
-df["RiskSegment"] = df["ChurnProbability"].apply(risk_segment(probs))
+df["RiskSegment"] = df["ChurnProbability"].apply(risk_segment)
 # Histogram
 st.write("Churn Probability Distribution")
 fig = px.histogram(df1, x="ChurnProbability", nbins=50, title="Churn Probability Distribution",)

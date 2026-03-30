@@ -125,7 +125,7 @@ def model_training():
         
             os.makedirs("models", exist_ok=True)
             filename = f"models/{model_name}_{sampler_name}.pkl"
-            joblib.dump(fitted_model, filename)}")
+            joblib.dump(model, filename)
 # -------------------------------------------------
 # RESULTS
 # -------------------------------------------------

@@ -1,5 +1,5 @@
 import streamlit as st
-from database.database_create import get_all_data, engine, db_path
+from database.database_create import get_all_data, engine, model_path 
 import pandas as pd
 import os
 
@@ -27,7 +27,7 @@ def database_content_view():
         )
 
         # Generate Binary Download for the SQLite .db file
-        if os.path.exists(db_path):
+        if os.path.exists(model_path):
             with open(db_path, "rb") as f:
                 st.download_button(
                     label="📂 Download Raw Database (.db)",

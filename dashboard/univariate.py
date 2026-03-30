@@ -18,4 +18,4 @@ def show(df):
         fig = px.bar(df[column].value_counts(), title=f"{column} Counts",color_discrete_sequence=px.colors.qualitative.Pastel1)
         fig.update_traces(texttemplate='%{y:,.0f}', textposition='inside',textfont_size=70)
 
-    st.plotly_chart(fig)
+    st.plotly_chart(fig,width='stretch)

@@ -6,7 +6,7 @@ import os
 import streamlit as st
 
 if "database" in st.secrets:
-    DATABASE_URL = st.secrets["database"]["url"]
+    DATABASE_URL = st.secrets[".streamlit/secrets.toml"]["url"]
     engine = sa.create_engine(DATABASE_URL, pool_pre_ping=True)
     st.info("✅ Connected to Supabase PostgreSQL")
 else:

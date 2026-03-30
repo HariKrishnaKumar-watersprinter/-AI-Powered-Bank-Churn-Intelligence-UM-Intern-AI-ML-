@@ -1,0 +1,20 @@
+cookie:
+  expiry_days: 30
+  key: bank_churn_secret_key_2026
+  name: bankchurn_auth_cookie
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Admin User
+      password: $2b$12$90vE77CapE1CZTU0dXbkJOkqlZm.Ah0rSl8IKMJNd7/CdQte82Bra
+    xyz:
+      email: xyz@gmail.com
+      first_name: xyz
+      last_name: xyz
+      logged_in: false
+      password: $2b$12$rqB81TquAdRSfaAW.dqrNunbwjgL1X5Tnv2/iLFQtkLzz.PxdJj8G
+      password_hint: '@xyz2'
+      roles: null
+preauthorized:
+  emails: []

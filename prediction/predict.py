@@ -95,9 +95,9 @@ def prediction_churn():
         
 
         strategy = personalized_strategy(input_df.iloc[0], prob)
-
+        Exited=pred
         st.write(f"#### Personalized Strategy: {strategy}") 
-        save_data(CustomerId,credit,geography,gender,age,tenure,balance,products,HasCrCard,active,salary)
+        save_data(CustomerId,credit,geography,gender,age,tenure,balance,products,HasCrCard,active,salary,Exited)
         st.success("Data saved successfully")
         return input_df
 if __name__ == "__main__":

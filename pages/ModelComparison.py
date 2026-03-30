@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import joblib
 from src.model_training1 import model_training
-from model_tracking.mlflow_tracking import model_tracking
+from model_tracking.mlflow_track import model_tracking
 from pathlib import Path
 import streamlit as st
 import plotly.express as px

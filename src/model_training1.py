@@ -122,7 +122,7 @@ def model_training():
             if auc > best_score:
                 best_score = auc
         
-            joblib.dump(model, f"F:/Project/unified mentor/Bank churn Prediction/model/{model_name}_{sampler_name}.pkl") 
+            joblib.dump(model, f"https://github.com/HariKrishnaKumar-watersprinter/-AI-Powered-Bank-Churn-Intelligence-UM-Intern-AI-ML-/main/model/{model_name}_{sampler_name}.pkl") 
 
 # -------------------------------------------------
 # RESULTS

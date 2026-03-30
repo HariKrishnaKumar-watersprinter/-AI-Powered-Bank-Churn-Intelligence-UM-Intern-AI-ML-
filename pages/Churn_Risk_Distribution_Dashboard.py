@@ -14,7 +14,7 @@ st.title("📊 Churn Risk Distribution Dashboard")
 
 df=create_features()
 df1=df.copy()
-pipeline = joblib.load("F:/Project/unified mentor/Bank churn Prediction/model/churn_pipeline.pkl")
+pipeline = os.path.join(os.getcwd(), "best model", "GradientBoosting_AllKNN.pkl")
 
 df1.drop(['CustomerId', 'Surname','Year'], axis=1, inplace=True)
 

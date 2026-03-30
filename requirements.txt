@@ -10,3 +10,4 @@ shap
 joblib
 mlflow
 streamlit-authenticator
+imblearn

@@ -9,7 +9,8 @@ from src.preprocessing import preprocess_data,scale_features
 from src.model_training1 import model_training
 from prediction.predict_model import load_prediction_model 
 def model_tracking():
-    mlflow.set_tracking_uri("http://127.0.0.1:5000")
+    model_path = os.path.join(os.getcwd(), "best model", "GradientBoosting_AllKNN.pkl")
+    mlflow.set_tracking_uri(model_path)
     mlflow.set_experiment("Bank churn model")
     with mlflow.start_run():
         x_train,x_test,y_train,y_test = preprocess_data()

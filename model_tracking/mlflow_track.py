@@ -7,13 +7,14 @@ from sklearn.metrics import accuracy_score, confusion_matrix, recall_score, prec
 from sklearn.metrics import roc_auc_score
 from src.preprocessing import preprocess_data,scale_features
 from src.model_training1 import model_training
+from prediction.predict_model import load_prediction_model 
 def model_tracking():
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
     mlflow.set_experiment("Bank churn model")
     with mlflow.start_run():
         x_train,x_test,y_train,y_test = preprocess_data()
         numeric_pipeline,x_train_scaled,x_test_scaled= scale_features()
-        model = joblib.load("F:/Project/unified mentor/Bank churn Prediction/best model/GradientBoosting_AllKNN.pkl")
+        model = load_prediction_model()
         
         _,_,_,grad_params,_=model_training()
         y_pred = model.predict(x_test_scaled)

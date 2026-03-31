@@ -88,7 +88,7 @@ pages = {
         st.Page("pages/Churn_Risk_Distribution_Dashboard.py", title="churn Risk Distribution", icon="📈"),
     ],
     "Model Analysis": [
-        st.Page("pages/ModelComparison.py", title="Model Selection", icon="⚖️"),
+        st.Page("pages/ModelComparison.py", title="Model Selection and comparison", icon="⚖️"),
         st.Page("pages/ThresholdOptimization.py", title="Thresholds", icon="🎯"),
         st.Page("pages/Model_Explainability.py", title="Explainability", icon="🧠"),
     ],

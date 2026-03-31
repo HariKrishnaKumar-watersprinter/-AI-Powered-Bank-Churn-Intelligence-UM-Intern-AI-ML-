@@ -104,9 +104,9 @@ pages = {
 
 if __name__ == "__main__":
     # 1. Handle Authentication First
-    auth_status = main.user_auth()
+   # auth_status = main.user_auth()
 
-    if auth_status:
+   # if auth_status:
         df = get_processed_data()
         
         # Initialize and run Navigation

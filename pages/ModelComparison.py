@@ -94,7 +94,8 @@ def render_performance_dashboard():
         if st.button('🔄 Retrain All Models'):
             with st.spinner("Executing training pipeline..."):
                 model_training()
-            st.rerun()
+                st.success("Training Complete!")
+                st.rerun()
     else:
         st.warning("No training results found in data/results.csv.")
         if st.button('🚀 Start Initial Training'):

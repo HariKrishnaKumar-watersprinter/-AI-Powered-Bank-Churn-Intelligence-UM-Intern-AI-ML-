@@ -20,7 +20,7 @@ def model_tracking():
             time.sleep(3)  # give it time to start
         except Exception as e:
             st.warning(f"Could not start MLflow server: {e}")
-    model_path = os.path.join(os.getcwd(), "best model")
+    model_path = os.path.join(os.getcwd(), "mlartifacts/2")
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
    
     mlflow.set_experiment("Bank churn model")

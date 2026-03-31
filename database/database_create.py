@@ -37,7 +37,7 @@ class BankCustomer(Base):
     HasCrCard = sa.Column(sa.Integer, nullable=False)
     IsActiveMember = sa.Column(sa.Integer, nullable=False)
     EstimatedSalary = sa.Column(sa.Float, nullable=False)
-    Exited=sa.column(sa.Integer,nullable=False)
+    Exited=sa.Column(sa.Integer,nullable=False)
     
 
 

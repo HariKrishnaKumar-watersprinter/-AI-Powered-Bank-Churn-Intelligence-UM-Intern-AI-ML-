@@ -11,15 +11,12 @@ from prediction.predict_model import load_prediction_model
 import os
 def model_tracking():
     if "mlflow_server" not in st.session_state:
-    try:
-        st.session_state.mlflow_server = subprocess.Popen(
-            ["mlflow", "server", "--host", "127.0.0.1", "--port", "5000"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        )
-        time.sleep(3)  # give it time to start
-    except Exception as e:
-        st.warning(f"Could not start MLflow server: {e}")
+        try:
+            st.session_state.mlflow_server = subprocess.Popen( ["mlflow", "server", "--host", "127.0.0.1", "--port", "5000"],
+                                             stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            time.sleep(3)  # give it time to start
+        except Exception as e:
+            st.warning(f"Could not start MLflow server: {e}")
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
    
     mlflow.set_experiment("Bank churn model")

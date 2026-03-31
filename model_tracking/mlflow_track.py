@@ -8,6 +8,7 @@ from sklearn.metrics import roc_auc_score
 from src.preprocessing import preprocess_data,scale_features
 from src.model_training1 import model_training
 from prediction.predict_model import load_prediction_model 
+import os
 def model_tracking():
     model_path = os.path.join(os.getcwd(), "best model", "GradientBoosting_AllKNN.pkl")
     mlflow.set_tracking_uri(model_path)

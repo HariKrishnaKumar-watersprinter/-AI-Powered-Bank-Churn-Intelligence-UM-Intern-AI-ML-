@@ -15,6 +15,6 @@ def show(df):
     st.plotly_chart(fig)
 
 
-    fig = px.scatter_matrix(df,
-        dimensions=["Age", "Balance", "EstimatedSalary"], color="Exited")
-    st.plotly_chart(fig)
+    #fig = px.scatter_matrix(df,
+        #dimensions=["Age", "Balance", "EstimatedSalary"], color="Exited")
+    #st.plotly_chart(fig)

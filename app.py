@@ -51,7 +51,7 @@ def get_processed_data():
 
 # --- Internal Page Functions ---
 def home_page():
-    st.title("🏦 AI-Powered Bank Churn Intelligence")
+    st.title("🏦 AI-Powered Bank Customer Churn Intelligence")
     st.markdown("""
 ### 🚀 Predict • Analyze • Explain • Prevent Customer Churn
 """)

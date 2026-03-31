@@ -49,7 +49,7 @@ def model_tracking():
         mlflow.log_metric("ROC-AUC", auc)
         mlflow.log_artifact(model_path)
         mlflow.set_tag('Training Info', 'Gradient boosting model for bank customer churn prediction')
-        signature = infer_signature(x_test, model.predict(x_test))
+        signature = infer_signature(x_test_scaled, model.predict(x_test_scaled))
         mlflow.sklearn.log_model(sk_model=model, artifact_path="bank_model", 
                           signature=signature,input_example=x_train_scaled,registered_model_name="Bank churn model")
         print("Model logged in MLflow")

@@ -9,6 +9,7 @@ from src.preprocessing import preprocess_data,scale_features
 from src.model_training1 import model_training
 from prediction.predict_model import load_prediction_model 
 import os
+import streamlit as st
 def model_tracking():
     if "mlflow_server" not in st.session_state:
         try:

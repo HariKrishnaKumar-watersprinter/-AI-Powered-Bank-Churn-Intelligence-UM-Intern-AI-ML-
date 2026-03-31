@@ -9,7 +9,7 @@ from src.data_loader import load_data
 from src.data_quality import data_quality_report, detect_outliers
 from src.feature_engineering import create_features
 from utils.retention_engine import personalized_strategy
-from prediction import predict
+from prediction import predict_ch
 from database import database_content
 from Authentication import main
 # -----------------------------
@@ -69,7 +69,7 @@ def home_page():
     """)
 
 def prediction_page():
-    predict.prediction_churn()
+    predict_ch.prediction_churn()
 
 def database_page():
     database_content.database_content_view()

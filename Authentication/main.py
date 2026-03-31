@@ -30,7 +30,7 @@ def user_auth():
         return True
     st.write("---")
     # 2. Handle Logged-Out State (Show Tabs)
-    st.title("🏦 Bank Churn Prediction System")
+    st.title("🏦 Bank Customer Churn Prediction System")
     st.markdown("### Secure Login Required")
     tab1, tab2, tab3 = st.tabs(["🔑 Login", "📝 Sign Up", "🔐 Forgot Password"])
 

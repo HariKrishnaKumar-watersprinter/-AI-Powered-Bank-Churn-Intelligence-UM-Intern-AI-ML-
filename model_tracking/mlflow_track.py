@@ -20,6 +20,7 @@ def model_tracking():
             time.sleep(3)  # give it time to start
         except Exception as e:
             st.warning(f"Could not start MLflow server: {e}")
+    model_path = os.path.join(os.getcwd(), "best model")
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
    
     mlflow.set_experiment("Bank churn model")
@@ -46,7 +47,7 @@ def model_tracking():
         mlflow.log_metric("Precision", precision_sc)
         mlflow.log_metric("F1 Score", f1_sc)
         mlflow.log_metric("ROC-AUC", auc)
-        mlflow.log_artifact("F:/Project/unified mentor/Bank churn Prediction/best model/GradientBoosting_AllKNN.pkl")
+        mlflow.log_artifact(model_path)
         mlflow.set_tag('Training Info', 'Gradient boosting model for bank customer churn prediction')
         signature = infer_signature(x_test, model.predict(x_test))
         mlflow.sklearn.log_model(sk_model=model, artifact_path="bank_model", 

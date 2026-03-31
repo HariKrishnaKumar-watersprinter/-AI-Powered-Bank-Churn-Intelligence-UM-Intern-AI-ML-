@@ -1,5 +1,5 @@
 # 🏦 AI-Powered Bank Customer Churn Prediction & Risk Intelligence System
-
+Deployed link : https://ai-powered-bank-churn-intelligence.streamlit.app/
 ---
 
 ## 🚀 Overview

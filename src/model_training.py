@@ -163,7 +163,7 @@ def model_training():
             if auc > best_score:
                 best_score = auc
                 best_model = grid.best_estimator_
-            
+            # SAVE THE MODEL
             os.makedirs("model", exist_ok=True)
             filename = f"model/{model_name}_{sampler_name}.pkl"
             joblib.dump(model, filename)
@@ -176,5 +176,5 @@ def model_training():
     print("\n🏆 FINAL RESULTS")
     print(results_df.head(10))
 
-# SAVE BEST MODEL
+
     print("\n💾 Best model with sampling saved!")

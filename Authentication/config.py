@@ -6,10 +6,6 @@ from yaml.loader import SafeLoader
 import os
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.yaml")
-
-
-
-
 def load_config():
     """Safely load or create config.yaml"""
     if not os.path.exists(CONFIG_PATH):

@@ -13,9 +13,9 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.yaml")
 def user_auth():
     authenticator, config = config_user()
     
-    # 1. Handle Logged-In State (Hide Tabs)
-    if st.session_state.get('authentication_status'):
-        # Password Management for Active Sessions
+    
+    # Handle Logged-Out State (Show Tabs)
+    if st.session_state.get('authentication_status'):       
         authenticator.logout("🚪 Logout", location="sidebar", key="logout_widget")
         if st.sidebar.checkbox("Change my password"):
             username = st.session_state.get('username')
@@ -35,6 +35,7 @@ def user_auth():
     tab1, tab2, tab3 = st.tabs(["🔑 Login", "📝 Sign Up", "🔐 Forgot Password"])
 
     with tab1:
+        # Handle Logged-In State (Hide Tabs)
         authenticator.login(location="main", key="login_widget")
         
         # Check status after widget interaction
@@ -63,16 +64,16 @@ def user_auth():
                         break
                 
                 if found_username:
-                    # 1. Generate a random temporary password
+                    # Generate a random temporary password
                     new_pw = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(10))
                     
-                    # 2. Hash the new password using the library's static method (v0.3.0+)
+                    # Hash the new password using the library's static method (v0.3.0+)
                     hashed_pw = stauth.Hasher.hash(new_pw)
                     
-                    # 3. Update the password in the config dictionary
+                    # Update the password in the config dictionary
                     config['credentials']['usernames'][found_username]['password'] = hashed_pw
                     
-                    # 4. Save the updated configuration back to the YAML file
+                    # Save the updated configuration back to the YAML file
                     try:
                         with open(CONFIG_PATH, 'w', encoding='utf-8') as file:
                             yaml.dump(config, file, default_flow_style=False)

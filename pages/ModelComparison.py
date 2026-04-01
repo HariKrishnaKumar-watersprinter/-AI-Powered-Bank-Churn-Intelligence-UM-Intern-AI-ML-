@@ -7,11 +7,10 @@ from pathlib import Path
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-# --- 0. Authentication Guard ---
+# Authentication Guard 
 #if not st.session_state.get('authentication_status'):
     #st.switch_page("app.py")
 
-# --- 1. Constants & Configuration ---
 # Using relative path to prevent app from hanging/crashing on different machines
 BASE_DIR = Path(__file__).resolve().parents[1]
 MODEL_FOLDER = BASE_DIR / "best model"
@@ -24,8 +23,7 @@ def init_session_state():
     if 'selected_model_name' not in st.session_state:
         st.session_state['selected_model_name'] = None
 
-# --- 2. Functional Components ---
-
+# Model selection
 def render_model_selection():
     """UI for picking and loading a saved model."""
     st.subheader("🗂️ Model Selection")
@@ -112,7 +110,7 @@ def render_tracking_section():
             model_tracking()
             st.success("Experiment logged successfully!")
 
-# --- 3. Main Page Execution ---
+# Main Page Execution 
 def main():
     st.title("🏆 Model Selection & Analysis")
     init_session_state()

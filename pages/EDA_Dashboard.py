@@ -20,29 +20,15 @@ tabs = st.tabs([
         "Multivariate",
         "Numerical"
     ])
-
-    # -------------------------
-    # UNIVARIATE
-    # -------------------------
+# UNIVARIATE  
 with tabs[0]:
         univariate.show(df)
-
-    # -------------------------
-    # BIVARIATE
-    # -------------------------
+# BIVARIATE
 with tabs[1]:
         bivariate.show(df)
-
-       
-
-    # -------------------------
-    # MULTIVARIATE
-    # -------------------------
+# MULTIVARIATE
 with tabs[2]:
         multivariate.show(df)
-
-    # -------------------------
-    # NUMERICAL
-    # -------------------------
+# NUMERICAL
 with tabs[3]:
         numerical.show(df)

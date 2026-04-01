@@ -12,17 +12,15 @@ from utils.retention_engine import personalized_strategy
 from prediction import predict_ch
 from database import database_content
 from Authentication import main
-# -----------------------------
+
 # ⚙️ CONFIG
-# -----------------------------
 st.set_page_config(
     page_title="Churn Intelligence System",
     layout="wide",page_icon='🏦',initial_sidebar_state="collapsed"
 )
 
-# -----------------------------
+
 # 🎨 CUSTOM UI (SaaS STYLE)
-# -----------------------------
 # Custom CSS
 st.markdown("""
 <style>
@@ -40,9 +38,8 @@ h1, h2, h3 {
 }
 </style>
 """, unsafe_allow_html=True)
-# -----------------------------
+
 # 📂 LOAD DATA + MODEL
-# -----------------------------
 @st.cache_data
 def get_processed_data():
     df = load_data()
@@ -103,7 +100,7 @@ pages = {
 }
 
 if __name__ == "__main__":
-    # 1. Handle Authentication First
+    # Handle Authentication First
    #auth_status = main.user_auth()
 
    #if auth_status:

@@ -229,7 +229,7 @@ streamlit run app.py
 ## 📊 Model Performance
 
 * 🎯 ROC-AUC: ~0.87+
-* 📈 High Recall (captures most churners)
+* 📈 Turn a churn recall rate from 50% t0 71%+
 * ⚖️ Balanced Precision-Recall
 
 ---

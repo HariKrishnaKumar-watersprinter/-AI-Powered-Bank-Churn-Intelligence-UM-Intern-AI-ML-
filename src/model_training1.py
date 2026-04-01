@@ -130,7 +130,8 @@ def model_training():
 # RESULTS
 # -------------------------------------------------
     results_df = pd.DataFrame(results).sort_values(by="ROC-AUC", ascending=False).reset_index(drop=True)
-    results_df.to_csv("F:\\Project\\unified mentor\\Bank churn Prediction\\data\\results.csv", index=False)
+    model_path = os.path.join(os.getcwd(), "data",'results.csv')
+    results_df.to_csv(model_path)
     print("\n🏆 FINAL RESULTS")
     print(results_df.head(10))
 

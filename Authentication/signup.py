@@ -17,7 +17,6 @@ def signup_user(authenticator, config, config_path=CONFIG_PATH):
 
     try:
         # ✅ Pre-authorization logic:
-        # If the list is empty or missing, set to None to allow open registration.
         # If the list has emails, only those emails can register.
         preauthorized_list = config.get('preauthorized', {}).get('emails')
         

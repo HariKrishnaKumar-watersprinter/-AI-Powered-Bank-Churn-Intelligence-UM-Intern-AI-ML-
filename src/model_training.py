@@ -159,15 +159,20 @@ def model_training():
             print(f"Confusion Matrix: {cm}")
             print(f"Accuracy: {acc}")
             print(f'classification report: {class_rep}')
-            joblib.dump(model, f"F:/Project/unified mentor/Bank churn Prediction/model/{model_name}_{sampler_name}.pkl")
+           
             if auc > best_score:
                 best_score = auc
                 best_model = grid.best_estimator_
-
+            
+            os.makedirs("model", exist_ok=True)
+            filename = f"model/{model_name}_{sampler_name}.pkl"
+            joblib.dump(model, filename)
 
 # RESULTS
     results_df = pd.DataFrame(results).sort_values(by="ROC-AUC", ascending=False).reindex()
-
+    os.cwd("data")
+    filename = f"data/results.csv'"
+    results_df.to_csv(data,filename)
     print("\n🏆 FINAL RESULTS")
     print(results_df.head(10))
 

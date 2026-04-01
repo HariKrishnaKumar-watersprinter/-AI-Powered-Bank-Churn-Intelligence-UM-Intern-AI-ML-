@@ -17,4 +17,4 @@ credentials:
       password_hint: '@xyz2'
       roles: null
 preauthorized:
-  emails: []
+  emails: [suresh@gmail.com]

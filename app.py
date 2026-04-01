@@ -89,7 +89,7 @@ pages = {
     ],
     "Model Analysis": [
         st.Page("pages/ModelComparison.py", title="Model Selection and comparison", icon="⚖️"),
-        st.Page("pages/ThresholdOptimization.py", title="Thresholds", icon="🎯"),
+        st.Page("pages/ThresholdOptimization.py", title="Precision-Recall Optimization", icon="🎯"),
         st.Page("pages/Model_Explainability.py", title="Explainability", icon="🧠"),
     ],
     "Strategy & Risk": [
@@ -104,9 +104,9 @@ pages = {
 
 if __name__ == "__main__":
     # 1. Handle Authentication First
-   auth_status = main.user_auth()
+   #auth_status = main.user_auth()
 
-   if auth_status:
+   #if auth_status:
         df = get_processed_data()
         
         # Initialize and run Navigation

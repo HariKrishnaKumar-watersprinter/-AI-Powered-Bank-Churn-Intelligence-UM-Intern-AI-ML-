@@ -37,7 +37,6 @@ fig = px.histogram(df1, x="ChurnProbability", nbins=50, title="Churn Probability
 fig.update_traces(texttemplate='%{y:,.0f}', textposition='auto')
 st.plotly_chart(fig)
 # Risk Segmentation
-# Segment count
 
 seg_fig = px.pie(df, names="RiskSegment", title="Risk Segmentation")
 st.plotly_chart(seg_fig)

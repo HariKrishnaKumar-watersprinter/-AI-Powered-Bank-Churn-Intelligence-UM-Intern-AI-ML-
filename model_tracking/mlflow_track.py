@@ -11,7 +11,7 @@ import os
 import streamlit as st
 import subprocess
 import time
-def model_tracking():
+def track_model():
     if "mlflow_server" not in st.session_state:
         try:
             st.session_state.mlflow_server = subprocess.Popen( ["mlflow", "server", "--host", "127.0.0.1", "--port", "5000"],

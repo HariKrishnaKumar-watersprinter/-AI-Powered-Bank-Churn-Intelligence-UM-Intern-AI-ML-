@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import joblib
 from src.model_training1 import model_training
-from model_tracking.mlflow_track import model_tracking
+from model_tracking.mlflow_track import track_model
 from pathlib import Path
 import streamlit as st
 import plotly.express as px
@@ -107,7 +107,7 @@ def render_tracking_section():
     st.info("Log the current best model performance to MLflow for versioning and auditing.")
     if st.button('📤 Push to MLflow'):
         with st.spinner("Logging to MLflow..."):
-            model_tracking()
+            track_model()
             st.success("Experiment logged successfully!")
 
 # Main Page Execution 

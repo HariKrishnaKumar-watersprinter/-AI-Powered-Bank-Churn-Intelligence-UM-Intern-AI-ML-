@@ -1,7 +1,6 @@
 import shap
 import pandas as pd
 from src.explainability import get_shap_values
-from src.feature_engineering import create_features
 import streamlit as st
 import matplotlib.pyplot as plt
 from src.preprocessing import scale_features

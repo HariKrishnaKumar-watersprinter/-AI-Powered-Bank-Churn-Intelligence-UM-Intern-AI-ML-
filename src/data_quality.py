@@ -4,7 +4,7 @@ def data_quality_report():
     df=load_data()
     report=pd.DataFrame()
     report["Column"] = df.columns
-    report["Data Type"] = df.dtypes.values
+    report["Data Type"] = df.dtypes.astype(str).values
     report["Missing Values"] = df.isnull().sum().values
     report["Missing %"] = (df.isnull().sum().values / len(df)) * 100
     report["Unique Values"] = df.nunique().values

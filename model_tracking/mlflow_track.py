@@ -1,7 +1,6 @@
 import mlflow
 import mlflow.sklearn
 from mlflow.models import infer_signature
-from sklearn.ensemble import RandomForestClassifier
 import joblib
 from sklearn.metrics import accuracy_score, confusion_matrix, recall_score, precision_score, f1_score,classification_report
 from sklearn.metrics import roc_auc_score

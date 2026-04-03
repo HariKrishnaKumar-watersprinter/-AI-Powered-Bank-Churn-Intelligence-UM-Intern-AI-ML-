@@ -4,7 +4,6 @@ from sqlalchemy import Column, Integer, String, and_,or_,update,delete
 from sqlalchemy.orm import declarative_base
 import os
 import streamlit as st
-from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy import create_engine
 import psycopg2

@@ -14,7 +14,7 @@ def database_content_view():
         data = pd.read_sql_query("select * from bank_customers", engine)
         
         # Display the data table
-        st.dataframe(data, width='stretch',hide_index=True)
+        st.dataframe(data, width='stretch', hide_index=True)
         st.write(f"**Total number of records:** {len(data)}")
 
         # Generate CSV for download

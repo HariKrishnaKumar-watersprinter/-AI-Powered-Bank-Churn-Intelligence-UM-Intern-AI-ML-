@@ -14,7 +14,6 @@ It goes beyond traditional ML by integrating:
 * 🎯 Personalized Retention Engine
 * 📊 Interactive Streamlit Dashboard
 * 🔐 Secure Authentication System (Login / Signup / Password Recovery)
-* 📊 Automated report generation (PDF)
 
 ---
 
